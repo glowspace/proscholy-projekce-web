@@ -1,4 +1,9 @@
-# projekce
+# Projekce ProScholy.cz
+Webová aplikace určená k promítání a zobrazení 
+textů a akordů ze zpěvníku ProScholy.cz na plátně 
+nebo na větším počtu synchronizovaných zařízeních.
+
+Aplikace běží na Nuxt.js a aktuálně je v prvotní fázi vývoje.
 
 ## Build Setup
 
