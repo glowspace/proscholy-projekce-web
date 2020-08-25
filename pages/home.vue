@@ -2,18 +2,14 @@
  <div>
     <h3>Projekce ProScholy.cz</h3>
 
-    <p>Přihlášený uživatel: Michael Dojčár</p>
-
     <div class="card">
       <div class="card-body">
-        <p>Vítejte v systému pro hudební projekci ProScholy.cz</p>
-        <p>Mód: <b class="text-success">{{ state.online_state }}</b> (offline mód je k dispozici)</p>
-        <p>Poslední aktualizace databáze: 25.8. 2020 2:04 - <a href="#">aktualizovat písně nyní</a></p>
+        <p>Vítejte v systému projekce ProScholy.cz</p>
 
         <nuxt-link to="/create_session"
-                   class="btn btn-secondary">Vytvořit promítání
+                   class="btn btn-primary">Promítat
         </nuxt-link>
-        <a class="btn btn-secondary">Připojit se k promítání</a>
+        <nuxt-link to="/join" class="btn btn-success">Připojit se k promítání</nuxt-link>
       </div>
     </div>
   </div>
