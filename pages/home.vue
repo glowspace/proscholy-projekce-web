@@ -1,5 +1,5 @@
 <template>
- <div>
+  <div>
     <h3>Projekce ProScholy.cz</h3>
 
     <div class="card">
@@ -9,7 +9,9 @@
         <nuxt-link to="/create_session"
                    class="btn btn-primary">Promítat
         </nuxt-link>
-        <nuxt-link to="/join" class="btn btn-success">Připojit se k promítání</nuxt-link>
+        <nuxt-link to="/join"
+                   class="btn btn-success">Připojit se k promítání
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -17,7 +19,6 @@
 
 <script>
 import state from './state'
-import Peer from 'peerjs';
 
 export default {
   components: {
@@ -33,20 +34,10 @@ export default {
   },
 
   mounted() {
-    this.peer = new Peer('uni');
+
   },
 
-  methods: {
-    send() {
-      // Send
-      console.log('Sending.');
-
-      const conn = this.peer.connect('unid');
-      conn.on('open', () => {
-        conn.send(this.msg);
-      });
-    }
-  }
+  methods: {}
 }
 </script>
 
