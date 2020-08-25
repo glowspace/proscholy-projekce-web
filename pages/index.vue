@@ -8,7 +8,7 @@
       <div class="card-body">
         <p>Vítejte v systému pro hudební projekci ProScholy.cz</p>
         <p>Mód: <b class="text-success">{{ state.online_state }}</b> (offline mód je k dispozici)</p>
-        <p>Poslední aktualizace databáze: 25.8. 2020 2:04 - <a>aktualizovat písně nyní</a></p>
+        <p>Poslední aktualizace databáze: 25.8. 2020 2:04 - <a href="#">aktualizovat písně nyní</a></p>
 
         <a class="btn btn-secondary">Vytvořit promítání</a>
         <a class="btn btn-secondary">Připojit se k existujícímu promítání</a>
@@ -37,3 +37,4 @@ export default {
 <style>
 
 </style>
+
