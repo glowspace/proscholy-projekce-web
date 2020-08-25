@@ -3,16 +3,22 @@
     <h4>Připojená zařízení</h4>
 
     <ul class="list-group mb-3">
-      <li class="list-group-item">Michael notebook (já) - správce</li>
-      <li class="list-group-item">Kostel plátno</li>
-      <li class="list-group-item">Mira Š. mobil</li>
+      <li class="list-group-item" v-for="device in state.current_session.clients">{{ device.name }}</li>
     </ul>
   </div>
 </template>
 
 <script>
+import state from "../state";
+
 export default {
-  name: "devices"
+  name: "devices",
+
+  data: () => {
+    return {
+      state: state
+    }
+  }
 }
 </script>
 

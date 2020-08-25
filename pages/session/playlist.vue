@@ -3,20 +3,22 @@
     <h4>Playlist</h4>
 
     <ul class="list-group mb-3">
-      <li class="list-group-item">Ať požehnán je Bůh (zvoleno)</li>
-      <li class="list-group-item">Hospodin je můj pastýř</li>
-      <li class="list-group-item">Já rád Tě mám</li>
-      <li class="list-group-item">Tobě patří chvála</li>
-      <li class="list-group-item">Jen ty, Pane můj</li>
+      <li class="list-group-item" v-for="song in state.current_session.songs">{{ song.name }}</li>
     </ul>
   </div>
 </template>
 
 <script>
+import state from "../state";
+
 export default {
   name: "playlist",
 
-
+  data: () => {
+    return {
+      state: state
+    }
+  }
 }
 </script>
 

@@ -16,11 +16,30 @@ export default {
 
     // Selected songs
     songs: [
-      {}
+      {
+        id: 15,
+        name: 'Ať srdce mé Tebe vídá',
+        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+      },
+      {
+        id: 25,
+        name: 'Hospodin je můj pastýř',
+        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+      },
+      {
+        id: 45,
+        name: 'Náš Bůh a Pán',
+        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+      },
+      {
+        id: 11,
+        name: 'Hospodine, kdo je podobný Tobě',
+        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+      }
     ],
 
     current_song: 15,
-    current_song_part: 10,
+    current_song_part: 2,
 
     clients: [
       {
@@ -41,8 +60,8 @@ export default {
   // Temporary song database
   songs: [
     {
-      'name': 'Ať srdce mé Tebe vídá',
-      'lyrics': 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+      name: 'Ať srdce mé Tebe vídá',
+      lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
     }
   ]
 }
