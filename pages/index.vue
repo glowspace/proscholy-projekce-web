@@ -1,40 +1,34 @@
 <template>
-  <div class="container-fluid mt-3">
-    <h3>Projekce ProScholy.cz</h3>
+  <div class=""
+       style="min-height: 80vh">
 
-    <p>Přihlášený uživatel: Michael Dojčár</p>
+    <div>
+      <h3>Projekce ProScholy.cz</h3>
 
-    <div class="card">
-      <div class="card-body">
-        <p>Vítejte v systému pro hudební projekci ProScholy.cz</p>
-        <p>Mód: <b class="text-success">{{ state.online_state }}</b> (offline mód je k dispozici)</p>
-        <p>Poslední aktualizace databáze: 25.8. 2020 2:04 - <a href="#">aktualizovat písně nyní</a></p>
-
-        <a class="btn btn-secondary">Vytvořit promítání</a>
-        <a class="btn btn-secondary">Připojit se k existujícímu promítání</a>
-      </div>
+      <p>Projekce ProScholy.cz je jednoduchá webová aplikace sloužící k promítání písní z křesťanské hudební databáze
+        Regenschori.cz a <a href="//zpevnik.proscholy.cz">Zpěvníku ProScholy.cz</a>.</p>
     </div>
 
+    <div>
+      <h4>Kde se dá využít</h4>
+
+      <p>Aplikace lze využít dvěma způsoby: 1. promítání textu na plátně/obrazovce,
+        2. synchronizované akordy a text pro
+        zpěváky a muzikanty</p>
+    </div>
+
+    <nuxt-link to="home"
+               class="btn btn-primary">Vyzkoušet projekci
+    </nuxt-link>
   </div>
 </template>
 
-<script lang="ts">
-import state from './state'
-
+<script>
 export default {
-  components: {
-    state
-  },
-
-  data: ()=> {
-    return {
-      state: state
-    }
-  }
+  name: "index"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
-
