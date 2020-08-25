@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <div class="mb-3">
-        <h3>Ať požehnán je Bůh</h3>
+        <h3>{{ state.current_session.current_preview.name }}</h3>
       </div>
 
       <div class="alert alert-warning">
@@ -25,8 +25,17 @@
 </template>
 
 <script>
+
+import state from "../state";
+
 export default {
-  name: "song.vue"
+  name: "song",
+
+  data: () => {
+    return {
+      state: state
+    }
+  }
 }
 </script>
 

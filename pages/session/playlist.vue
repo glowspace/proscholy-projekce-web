@@ -3,7 +3,10 @@
     <h4>Playlist</h4>
 
     <ul class="list-group mb-3">
-      <li class="list-group-item" v-for="song in state.current_session.songs">{{ song.name }}</li>
+      <li class="list-group-item"
+          v-for="song in state.current_session.songs"
+          @click="selectSong(song)">{{ song.name }}
+      </li>
     </ul>
   </div>
 </template>
@@ -17,6 +20,12 @@ export default {
   data: () => {
     return {
       state: state
+    }
+  },
+
+  methods: {
+    selectSong(song) {
+        this.state.current_session.current_preview = song
     }
   }
 }

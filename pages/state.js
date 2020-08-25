@@ -38,7 +38,16 @@ export default {
       }
     ],
 
-    current_song: 15,
+    current_song: {
+      id: 15,
+      name: 'Ať srdce mé Tebe vídá',
+      lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+    },
+    current_preview: {
+      id: 15,
+      name: 'Ať srdce mé Tebe vídá',
+      lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+    },
     current_song_part: 2,
 
     clients: [
