@@ -4,23 +4,43 @@
 
     <label>Pojmenujte promítání</label>
     <input class="form-control"
+           placeholder="název promítání"
            v-model="name">
 
-    <nuxt-link to="session"
-               class="btn btn-primary">Vytvořit promítání
-    </nuxt-link>
+    <a @click="submit"
+       class="btn btn-primary">Vytvořit promítání
+    </a>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "create_session",
 
   data: () => {
     return {
-      name: 'nové promítání'
+      name: '',
     }
   },
+
+  methods: {
+
+    submit() {
+
+      axios.post('http://localhost:8000/api/sessions', {
+        name: this.name
+      })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    }
+  }
 }
 </script>
 
