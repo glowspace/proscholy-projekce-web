@@ -1,7 +1,8 @@
 <template>
   <div>
     <h3>{{ state.current_session.name }}</h3>
-    <p>{{ state.current_session.place }}, {{ state.current_session.date }}</p>
+    <!--    <p>{{ state.current_session.place }}, {{ state.current_session.date }}</p>-->
+    <p>Řídící pult promítání</p>
 
     <hr>
 

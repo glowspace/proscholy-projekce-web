@@ -3,7 +3,7 @@
     <h4>Připojená zařízení</h4>
 
     <ul class="list-group mb-3">
-      <li class="list-group-item" v-for="device in state.current_session.clients">{{ device.name }}</li>
+      <li class="list-group-item" v-for="device in state.current_session.devices">{{ device.name }}</li>
     </ul>
   </div>
 </template>

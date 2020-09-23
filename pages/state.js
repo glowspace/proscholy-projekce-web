@@ -1,36 +1,24 @@
 export default {
-  // This client
+  // This client data
   client: {
     id: 15,
     name: 'Michael notebook'
   },
 
-  // Opened session
+  // Session object
   current_session: {
-    id: 15,
+    id: 1,
     code: 4538,
 
     name: 'Chvály',
     place: 'Dolany u Olomouce',
     date: '25.8.2020 19:00',
 
+    current_song_id: 1,
+    song_part_id: 1,
+
     // Selected songs
     songs: [
-      {
-        id: 15,
-        name: 'Ať srdce mé Tebe vídá',
-        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-      },
-      {
-        id: 25,
-        name: 'Hospodin je můj pastýř',
-        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-      },
-      {
-        id: 45,
-        name: 'Náš Bůh a Pán',
-        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-      },
       {
         id: 11,
         name: 'Hospodine, kdo je podobný Tobě',
@@ -38,32 +26,20 @@ export default {
       }
     ],
 
-    current_song: {
-      id: 15,
-      name: 'Ať srdce mé Tebe vídá',
-      lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-    },
-    current_preview: {
-      id: 15,
-      name: 'Ať srdce mé Tebe vídá',
-      lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-    },
-    current_song_part: 2,
-
-    clients: [
+    devices: [
       {
         id: 15,
+        type: 1,
         name: 'Michael notebook'
       },
-      {
-        id: 156,
-        name: 'Kostel plátno'
-      },
-      {
-        id: 86,
-        name: 'Mira Š. mobil'
-      },
     ]
+  },
+
+  // Only this client data
+  current_preview: {
+    id: 15,
+    name: 'Ať srdce mé Tebe vídá',
+    lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
   },
 
   // Temporary song database

@@ -15,6 +15,7 @@
 
 <script>
 import axios from 'axios';
+import state from "./state";
 
 export default {
   name: "create_session",
@@ -22,6 +23,7 @@ export default {
   data: () => {
     return {
       name: '',
+      state: state
     }
   },
 
@@ -32,9 +34,13 @@ export default {
       axios.post('http://localhost:8000/api/sessions', {
         name: this.name
       })
-        .then(function (response) {
-          console.log(response);
+        .then((response) => {
+          this.state.current_session = response.data
+
+
+          this.$router.replace({path: '/session'})
         })
+
         .catch(function (error) {
           console.log(error);
         });

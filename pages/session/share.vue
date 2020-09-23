@@ -6,11 +6,12 @@
     <b-modal id="modal-share"
              title="Sdílet promítání">
       <h3>Kód pro sdílení</h3>
-      <h1 style="font-size: 90px">
-        {{ state.current_session.code.toString()[0] }}<span class="text-muted">-</span>
-        {{ state.current_session.code.toString()[1] }}<span class="text-muted">-</span>
-        {{ state.current_session.code.toString()[2] }}<span class="text-muted">-</span>
-        {{ state.current_session.code.toString()[3] }}</h1>
+      <h1 style="font-size: 70px">
+        <span>{{ state.current_session.code.toString()[0] }}</span><span class="text-muted">-</span>
+        <span>{{ state.current_session.code.toString()[1] }}</span><span class="text-muted">-</span>
+        <span>{{ state.current_session.code.toString()[2] }}</span><span class="text-muted">-</span>
+        <span>{{ state.current_session.code.toString()[3] }}</span><span class="text-muted">-</span>
+        <span>{{ state.current_session.code.toString()[4] }}</span></h1>
 
       <p class="text-muted">Pomocí toho kódu se mohou ostatní zařízení připojit k tomuto promítání.</p>
     </b-modal>
