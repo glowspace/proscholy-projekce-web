@@ -43,7 +43,10 @@ export default {
   },
 
   mounted() {
-
+    Echo.channel('Session.1')
+      .listen('SessionStatusUpdated', (e) => {
+        console.log(e.order.name);
+      });
   },
 
   methods: {
