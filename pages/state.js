@@ -7,12 +7,10 @@ export default {
 
   // Session object
   current_session: {
-    id: 1,
+    id: 0,
     code: 4538,
 
     name: 'Chvály',
-    place: 'Dolany u Olomouce',
-    date: '25.8.2020 19:00',
 
     current_song_id: 1,
     song_part_id: 1,
@@ -39,14 +37,7 @@ export default {
   current_preview: {
     id: 15,
     name: 'Ať srdce mé Tebe vídá',
-    lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
+    lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.',
+    song_part_id: 1,
   },
-
-  // Temporary song database
-  songs: [
-    {
-      name: 'Ať srdce mé Tebe vídá',
-      lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-    }
-  ]
 }

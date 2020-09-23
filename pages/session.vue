@@ -44,10 +44,16 @@ export default {
   },
 
   mounted() {
-    Echo.channel('Session.1')
+    if(this.state.current_session.id === 0){
+      this.$router.replace({path: '/home'})
+    }
+
+    Echo.channel('Session.'+ this.state.current_session.id)
       .listen('SessionStatusUpdated', (e) => {
-        console.log(e.session)
-        this.state.current_session.name = e.session.name
+        console.log(e.session.songs)
+        this.state.current_session = e.session
+
+
       });
   },
 

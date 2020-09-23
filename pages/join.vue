@@ -8,18 +8,55 @@
       Znám kód
 
       <input type="text"
-             maxlength="4">
+             v-model="code"
+             maxlength="5">
     </div>
 
-    <nuxt-link to="session"
-               class="btn btn-primary">Připojit se
-    </nuxt-link>
+    <a to="session"
+       class="btn btn-primary"
+       @click="submit">Připojit se
+    </a>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import state from "./state";
+
 export default {
-  name: "join"
+  name: "join",
+
+  data: () => {
+    return {
+      state: state,
+      code: ''
+    }
+  },
+
+  methods: {
+    submit() {
+
+      axios.get('http://localhost:8000/api/sessions/' + this.code)
+        .then((response) => {
+          this.state.current_session = response.data
+
+          this.$router.replace({path: '/session'})
+        })
+
+        .catch(function (error) {
+          console.log(error);
+        });
+
+    }
+  },
+
+  watch: {
+    code(value) {
+      if (value.length === 5) {
+        this.submit()
+      }
+    }
+  }
 }
 </script>
 

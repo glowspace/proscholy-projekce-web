@@ -25,7 +25,7 @@ export default {
 
   methods: {
     selectSong(song) {
-        this.state.current_session.current_preview = song
+        this.state.current_preview = song
     }
   }
 }
