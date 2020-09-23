@@ -46,7 +46,7 @@ export default {
     Echo.channel('Session.1')
       .listen('SessionStatusUpdated', (e) => {
         console.log(e.session)
-        this.state.current_session = e.session
+        this.state.current_session.name = e.session.name
       });
   },
 
