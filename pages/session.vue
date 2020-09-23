@@ -45,7 +45,8 @@ export default {
   mounted() {
     Echo.channel('Session.1')
       .listen('SessionStatusUpdated', (e) => {
-        console.log(e.order.name);
+        console.log(e.session)
+        this.state.current_session = e.session
       });
   },
 
