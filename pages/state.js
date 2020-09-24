@@ -35,9 +35,7 @@ export default {
 
   // Only this client data
   current_preview: {
-    id: 15,
-    name: 'Ať srdce mé Tebe vídá',
-    lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.',
-    song_part_id: 1,
+    song: {},
+    section_id: 1
   },
 }

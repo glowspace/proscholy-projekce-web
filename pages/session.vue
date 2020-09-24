@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3>{{ state.current_session.name }}</h3>
+        <h3>{{ state.current_session.name }}</h3>
     <!--    <p>{{ state.current_session.place }}, {{ state.current_session.date }}</p>-->
     <p>Řídící pult promítání</p>
 
@@ -44,13 +44,13 @@ export default {
   },
 
   mounted() {
-    if(this.state.current_session.id === 0){
+    if (this.state.current_session.id === 0) {
       this.$router.replace({path: '/home'})
     }
 
-    Echo.channel('Session.'+ this.state.current_session.id)
+    Echo.channel('Session.' + this.state.current_session.id)
       .listen('SessionStatusUpdated', (e) => {
-        console.log(e.session.songs)
+        console.debug('Session data updated from WebSocket.')
         this.state.current_session = e.session
 
 
@@ -58,9 +58,6 @@ export default {
   },
 
   methods: {
-    selectSong() {
-
-    }
   }
 }
 </script>

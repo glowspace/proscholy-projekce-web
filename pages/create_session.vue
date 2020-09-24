@@ -37,7 +37,6 @@ export default {
         .then((response) => {
           this.state.current_session = response.data
 
-
           this.$router.replace({path: '/session'})
         })
 
