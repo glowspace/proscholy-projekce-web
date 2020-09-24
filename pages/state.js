@@ -1,8 +1,8 @@
 export default {
   // This client data
   client: {
-    id: 15,
-    name: 'Michael notebook'
+    id: null,
+    name: null
   },
 
   // Session object

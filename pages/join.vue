@@ -4,18 +4,24 @@
 
     <h4>Připojit se k existujícímu promítání</h4>
 
-    <div class="card">
-      Znám kód
-
-      <input type="text"
-             v-model="code"
-             maxlength="5">
+    <div v-if="loading">
+      načítání promítání...
     </div>
 
-    <a to="session"
-       class="btn btn-primary"
-       @click="submit">Připojit se
-    </a>
+    <div v-else>
+      <div class="card">
+        Znám kód
+
+        <input type="text"
+               v-model="code"
+               maxlength="5">
+      </div>
+
+      <a to="session"
+         class="btn btn-primary"
+         @click="submit">Připojit se
+      </a>
+    </div>
   </div>
 </template>
 
@@ -29,12 +35,15 @@ export default {
   data: () => {
     return {
       state: state,
-      code: ''
+      code: '',
+      loading: false
     }
   },
 
   methods: {
     submit() {
+
+      this.loading = true;
 
       axios.get('http://localhost:8000/api/sessions/' + this.code)
         .then((response) => {
@@ -45,6 +54,8 @@ export default {
 
         .catch(function (error) {
           console.log(error);
+
+          this.loading = false;
         });
 
     }
