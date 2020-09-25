@@ -1,29 +1,32 @@
 <template>
   <div class="container-fluid mt-3">
-    <div>
-      <h3>Projekce ProScholy.cz</h3>
 
+    <navbar/>
+
+    <div>
       <p>Projekce ProScholy.cz je jednoduchá webová aplikace sloužící k promítání písní z křesťanské hudební databáze
         Regenschori.cz a <a href="//zpevnik.proscholy.cz">Zpěvníku ProScholy.cz</a>.</p>
     </div>
 
-    <div>
-      <h4>Kde se dá využít</h4>
+    <div class="card bg-light">
+      <div class="card-body text-center p-5">
+        <h4>K čemu aplikace slouží</h4>
 
-      <p>Aplikace lze využít dvěma způsoby: 1. promítání textu na plátně/obrazovce,
-        2. synchronizované akordy a text pro
-        zpěváky a muzikanty</p>
+        <p class="mt-4">1. promítání textu na plátně/obrazovce</p>
+         <p> 2. synchronizované akordy a text pro
+          zpěváky a muzikanty</p>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="card-body">
-        <p>Vítejte v systému projekce ProScholy.cz</p>
+    <div class="card bg-light">
+      <div class="card-body text-center p-5">
+        <p>Začít promítat</p>
 
         <nuxt-link to="/create_session"
-                   class="btn btn-primary">Promítat
+                   class="btn btn-primary">Vytvořit nové promítání
         </nuxt-link>
         <nuxt-link to="/join"
-                   class="btn btn-success">Připojit se k promítání
+                   class="btn btn-success">Připojit se k existujícímu
         </nuxt-link>
       </div>
     </div>

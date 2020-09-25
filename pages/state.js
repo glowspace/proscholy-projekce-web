@@ -11,27 +11,15 @@ export default {
     id: 0,
     code: 4538,
 
-    name: 'Chvály',
+    name: 'název promítání',
 
-    current_song_id: 1,
-    song_part_id: 1,
+    current_song_id: null,
+    song_part_id: null,
 
     // Selected songs
-    songs: [
-      {
-        id: 11,
-        name: 'Hospodine, kdo je podobný Tobě',
-        lyrics: 'Ať srdce mé Tebe vídá, ať srdce mé tebe zná.'
-      }
-    ],
+    songs: [],
 
-    devices: [
-      {
-        id: 15,
-        type: 1,
-        name: 'Michael notebook'
-      },
-    ]
+    devices: []
   },
 
   // Only this client data

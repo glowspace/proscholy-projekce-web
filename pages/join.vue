@@ -1,5 +1,6 @@
 <template>
-  <div class="container-fluid mt-3">
+  <div class="container-fluid">
+
     <h3>Projekce ProScholy.cz</h3>
 
     <h4>Připojit se k existujícímu promítání</h4>
@@ -28,10 +29,11 @@
 <script>
 import axios from "axios";
 import state from "./state";
+import Navbar from "~/components/Navbar";
 
 export default {
   name: "join",
-
+  components: {Navbar},
   data: () => {
     return {
       state: state,
@@ -48,6 +50,12 @@ export default {
       axios.get('http://localhost:8000/api/sessions/' + this.code)
         .then((response) => {
           this.state.current_session = response.data
+          // this.state.current_preview.song = this.state.current_session.songs.find(x => x.id === id);
+          this.state.current_preview.section_id = this.state.current_session.song_part_id;
+
+          let song_id = this.state.current_session.current_song_id
+          this.state.current_preview.song = this.state.current_session.songs.find(x => x.id === song_id);
+
 
           this.$router.replace({path: '/session'})
         })

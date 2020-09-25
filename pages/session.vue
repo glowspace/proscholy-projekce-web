@@ -1,5 +1,7 @@
 <template>
   <div>
+    <navbar />
+
     <div v-if="state.client.type === 0"
          class="container-fluid mt-3">
       <h3>{{ state.current_session.name }}</h3>
@@ -40,10 +42,11 @@ import Song from './session/song'
 import Devices from "./session/devices";
 import Share from "./session/share";
 import Project from "./session/project";
+import Navbar from "../components/Navbar";
 
 export default {
   name: "session",
-  components: {Project, Share, Devices, Song, Playlist},
+  components: {Navbar, Project, Share, Devices, Song, Playlist},
   data: () => {
     return {
       state: state,
@@ -52,7 +55,7 @@ export default {
 
   mounted() {
     if (this.state.current_session.id === 0) {
-      this.$router.replace({path: '/home'})
+      this.$router.replace({path: '/'})
     }
 
     Echo.channel('Session.' + this.state.current_session.id)

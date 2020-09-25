@@ -22,6 +22,12 @@ export default {
 
   computed: {
     current_phrase() {
+      console.log(this.state.current_session.current_song_id)
+
+      if (this.state.current_session.current_song_id == null) {
+        return '';
+      }
+
       let id = this.state.current_session.current_song_id
       let section_id = this.state.current_session.song_part_id
 
