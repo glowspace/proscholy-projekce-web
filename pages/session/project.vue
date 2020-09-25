@@ -56,6 +56,6 @@ export default {
 
   font-family:      'Arial', Helvetica, sans-serif;
   /*-webkit-text-stroke: 2px black;*/
-  text-transform:   uppercase;
+  /*text-transform:   uppercase;*/
 }
 </style>

@@ -1,7 +1,5 @@
 <template>
   <div>
-
-
     <div v-if="state.client.type === 0"
          class="container-fluid mt-3">
       <h3>{{ state.current_session.name }}</h3>
@@ -48,7 +46,7 @@ export default {
   components: {Project, Share, Devices, Song, Playlist},
   data: () => {
     return {
-      state: state
+      state: state,
     }
   },
 
@@ -61,8 +59,6 @@ export default {
       .listen('SessionStatusUpdated', (e) => {
         console.debug('Session data updated from WebSocket.')
         this.state.current_session = e.session
-
-
       });
   },
 
