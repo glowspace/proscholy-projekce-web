@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container-fluid mt-3">
     <h3>Projekce ProScholy.cz</h3>
 
     <div class="card">

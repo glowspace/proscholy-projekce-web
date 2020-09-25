@@ -2,7 +2,8 @@ export default {
   // This client data
   client: {
     id: null,
-    name: null
+    name: null,
+    type: 0
   },
 
   // Session object
