@@ -1,7 +1,5 @@
 <template>
-  <div class=""
-       style="min-height: 80vh">
-
+  <div class="container-fluid mt-3">
     <div>
       <h3>Projekce ProScholy.cz</h3>
 
@@ -17,9 +15,18 @@
         zpěváky a muzikanty</p>
     </div>
 
-    <nuxt-link to="home"
-               class="btn btn-primary">Vyzkoušet projekci
-    </nuxt-link>
+    <div class="card">
+      <div class="card-body">
+        <p>Vítejte v systému projekce ProScholy.cz</p>
+
+        <nuxt-link to="/create_session"
+                   class="btn btn-primary">Promítat
+        </nuxt-link>
+        <nuxt-link to="/join"
+                   class="btn btn-success">Připojit se k promítání
+        </nuxt-link>
+      </div>
+    </div>
   </div>
 </template>
 
