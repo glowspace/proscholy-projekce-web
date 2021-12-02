@@ -3,7 +3,7 @@ export default {
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
   */
-  mode: 'spa',
+  ssr: false,
   /*
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
@@ -32,9 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   ** https://nuxtjs.org/guide/plugins
   */
-  plugins: [
-    '@/plugins/echo.js'
-  ],
+  plugins: [],
   /*
   ** Auto import components
   ** See https://nuxtjs.org/api/configuration-components
@@ -55,6 +53,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    '@nuxtjs/apollo',
+    '@nuxtjs/proxy',
   ],
   /*
   ** Axios module configuration
@@ -67,6 +67,22 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
-  build: {}
+  build: {},
+
+  // Apollo configuration
+  apollo: {
+    clientConfigs: {
+      default: '~/plugins/apollo-config-auth.js',
+    }
+  },
+
+  proxy: {
+    '/api': {
+      target: 'https://zpevnik.proscholy.cz/graphql',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
 }
 
