@@ -30,7 +30,6 @@
 <script>
 
 import state from "../state";
-import axios from "axios";
 
 export default {
   name: "song",
@@ -43,11 +42,7 @@ export default {
 
   methods: {
 
-    projectSection(key) {
-      this.loadSectionOfCurrentSong(key)
-    },
-
-    loadSectionOfCurrentSong(section) {
+    projectSection(section) {
       console.debug("Go to section " + section)
       //console.debug("Section debug:", this.state.current_preview.song.sections[section])
 
@@ -58,6 +53,7 @@ export default {
       // Choose section
       this.state.current_preview.section_id = section
       this.state.current_preview.section_phrase = this.state.current_preview.song.sections[section]
+      localStorage.setItem("section_phrase", this.state.current_preview.section_phrase)
     },
   }
 }

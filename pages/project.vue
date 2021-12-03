@@ -2,7 +2,7 @@
   <div class="wrapper justify-content-center">
     <div class="justify-content-center align-self-center"
          style="white-space: pre-line">
-      <span>{{ state.current_preview.section_phrase }}</span>
+      <span>{{ current_phrase }}</span>
     </div>
 
   </div>
@@ -23,86 +23,20 @@ export default {
   },
 
   created() {
-    window.addEventListener("keydown", this.keyPressed);
-  },
-
-  destroyed() {
-    window.removeEventListener("keydown", this.keyPressed);
+    window.addEventListener("storage", () => {
+      this.current_phrase = localStorage.getItem('section_phrase')
+    }, false);
   },
 
   mounted() {
-
+    this.current_phrase = localStorage.getItem('section_phrase')
   },
 
-  methods: {
-    loadSong(id) {
-      this.state.current_preview.song = this.state.current_session.songs[id]
-      this.state.current_session.song_id = id
-
-      console.debug("Switching song to #" + id + " " + this.state.current_preview.song.name)
-
-      this.loadSectionOfCurrentSong(0)
-    },
-
-    loadSongOnLastSection(id) {
-      this.loadSong(id)
-      this.loadSectionOfCurrentSong(this.state.current_preview.song.sections.length - 1)
-    },
-
-    loadSectionOfCurrentSong(section) {
-      console.debug("Go to section " + section)
-      //console.debug("Section debug:", this.state.current_preview.song.sections[section])
-
-      this.state.current_preview.section_id = section
-      this.state.current_preview.section_phrase = this.state.current_preview.song.sections[section]
-    },
-
-    keyPressed(event) {
-      if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(event.code) > -1) {
-        event.preventDefault();
-      }
-
-      if (event.repeat) {
-        return
-      }
-
-      if (event.code === 'ArrowRight') {
-        this.nextSection()
-      }
-      if (event.code === 'ArrowLeft') {
-        this.previousSection()
-      }
-      if (event.code === 'Escape') {
-        this.$router.push({
-          path: '/'
-        })
-      }
-    },
-
-    nextSection() {
-      if (this.state.current_preview.song.sections[this.state.current_preview.section_id + 1]) {
-        this.loadSectionOfCurrentSong(this.state.current_preview.section_id + 1)
-        return
-      }
-
-      if (this.state.current_session.songs[this.state.current_session.song_id + 1]) {
-        this.loadSong(this.state.current_session.song_id + 1)
-      }
-    },
-
-    previousSection() {
-      if (this.state.current_preview.song.sections[this.state.current_preview.section_id - 1]) {
-        this.loadSectionOfCurrentSong(this.state.current_preview.section_id - 1)
-        return
-      }
-
-      if (this.state.current_session.songs[this.state.current_session.song_id - 1]) {
-        this.loadSongOnLastSection(this.state.current_session.song_id - 1)
-      }
-    },
+  destroyed() {
+    window.removeEventListener("storage", () => {
+      this.current_phrase = localStorage.getItem('section_phrase')
+    }, false);
   },
-
-  computed: {}
 }
 </script>
 

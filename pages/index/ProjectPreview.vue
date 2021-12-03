@@ -25,9 +25,7 @@ export default {
 
   methods: {
     openProjection() {
-      this.$router.push({
-        path: '/project'
-      })
+      window.open('/project', '_blank');
     }
   }
 }
@@ -53,7 +51,7 @@ export default {
   font-family:      'Arial', Helvetica, sans-serif;
   /*-webkit-text-stroke: 2px black;*/
   /*text-transform:   uppercase;*/
-  transition: 1s;
+  transition:       1s;
 }
 </style>
 
