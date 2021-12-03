@@ -1,3 +1,4 @@
+require('dotenv').config();
 export default {
   /*
   ** Nuxt rendering mode
@@ -43,6 +44,7 @@ export default {
   */
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/dotenv',
   ],
   /*
   ** Nuxt.js modules
@@ -78,7 +80,7 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'https://zpevnik.proscholy.cz/graphql',
+      target: process.env.GRAPHQL_TARGET,
       pathRewrite: {
         '^/api': '/'
       }
