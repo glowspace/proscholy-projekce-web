@@ -80,7 +80,7 @@ export default {
 
 .embed-responsive:hover .after {
   display:         flex;
-  background:      rgba(0, 0, 0, 0.7);
+  background:      rgba(0, 0, 0, 0.6);
   transition:      0.5s opacity;
   opacity: 1;
 }
