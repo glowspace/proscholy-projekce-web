@@ -63,10 +63,6 @@ export default {
     }
   },
 
-  mounted() {
-    this.addSong()
-  },
-
   methods: {
     async addSong() {
       console.debug("Trying to pull song from ProScholy GQL API server.")

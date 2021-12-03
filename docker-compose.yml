@@ -1,0 +1,16 @@
+version: '3'
+services:
+  client:
+    build:
+      context: docker
+      dockerfile: Dockerfile
+    volumes:
+      - .:/var/www/html
+      - "/var/www/html/node_modules"
+    environment:
+      - HOST=0.0.0.0
+    ports:
+      - "${HTTP_PORT}:3000"
+    tty: true
+    # try to start the nuxt server, in case of error (after docker-compose down or fresh install) do install yarn and build nuxt files
+    entrypoint: "sh -c 'yarn && yarn build && pm2-runtime start ecosystem.config.js'"
