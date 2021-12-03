@@ -103,6 +103,8 @@ export default {
         this.loading = false;
         this.searchResults = [];
       }
+
+      this.song_id = null
     },
 
     loadSongAsPreview(id) {

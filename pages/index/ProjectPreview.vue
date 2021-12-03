@@ -7,6 +7,10 @@
         <span>{{ state.current_preview.section_phrase }}</span>
       </div>
     </div>
+    <div class="after justify-content-center align-items-center">
+      <div>Otevřít projekční okno</div>
+    </div>
+
   </div>
 </template>
 
@@ -31,14 +35,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped
+       lang="scss">
+
+.embed-responsive {
+  position:   relative;
+  cursor:     pointer;
+  transition: 0.5s;
+}
 
 .wrapper {
   display:          flex;
   flex-direction:   column;
 
   white-space:      pre-line;
-  font-size:        1vw;
+  font-size:        0.9vw;
   font-weight:      bold;
   color:            white;
 
@@ -52,6 +63,28 @@ export default {
   /*-webkit-text-stroke: 2px black;*/
   /*text-transform:   uppercase;*/
   transition:       1s;
+
 }
+
+.embed-responsive .after {
+  position:   absolute;
+  top:        0;
+  left:       0;
+  width:      100%;
+  height:     100%;
+  display:    flex;
+  opacity: 0;
+  color:      #ffffff;
+  transition: 0.5s;
+}
+
+.embed-responsive:hover .after {
+  display:         flex;
+  background:      rgba(0, 0, 0, 0.7);
+  transition:      0.5s opacity;
+  opacity: 1;
+}
+
+
 </style>
 

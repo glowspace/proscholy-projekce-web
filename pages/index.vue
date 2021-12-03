@@ -47,10 +47,14 @@ export default {
     window.removeEventListener("keydown", this.keyPressed);
   },
 
+  mounted() {
+    localStorage.setItem("section_phrase", '')
+  },
+
   methods: {
 
     keyPressed(event) {
-      if (["Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].indexOf(event.code) > -1) {
+      if (["ArrowUp", "ArrowDown"].indexOf(event.code) > -1) {
         event.preventDefault();
       }
 

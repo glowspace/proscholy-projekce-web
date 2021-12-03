@@ -30,6 +30,9 @@ export default {
 
   mounted() {
     this.current_phrase = localStorage.getItem('section_phrase')
+
+    alert("V tomto okně se budou zobrazovat promítané texty. " +
+      "Můžet jej přesunout na sekundární monitor nebo dataprojektor.")
   },
 
   destroyed() {
